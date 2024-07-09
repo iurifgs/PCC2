@@ -1,0 +1,79 @@
+/* LOGIN FORM */
+
+.login {
+    background-color: #d4e4f7; /* Azul um pouco mais escuro */
+    height: 100vh; /* Altura total da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; /* Largura máxima do formulário */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: grid;
+    gap: 20px; /* Espaço entre os elementos */
+}
+
+.login h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333333; /* Cor do título */
+    margin-bottom: 20px;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login form label {
+    margin-bottom: 8px;
+    color: #666666; /* Cor do texto */
+}
+
+.login form input[type="text"],
+.login form input[type="password"] {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #cccccc; /* Cor da borda */
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.login form input[type="submit"] {
+    background-color: #1e90ff; /* Azul */
+    color: #ffffff; /* Cor do texto */
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 50%; /* Largura do botão */
+}
+
+.login form input[type="submit"]:hover {
+    background-color: #007bff; /* Azul mais escuro ao passar o mouse */
+}
+
+.login .password-reset-link {
+    text-align: center;
+    margin-top: 16px;
+    color: #1e90ff; /* Azul */
+    text-decoration: none;
+}
+
+.login .password-reset-link a {
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.login .password-reset-link:hover {
+    text-decoration: none; /* Remove o sublinhado */
+}

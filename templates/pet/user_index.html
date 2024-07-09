@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/style_projeto.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Animais cadastrados</h1>
+    <div class="image-row">
+        {% for animal in animais %}
+            <a href="{% url 'user_detail' animal.id %}" class="animal-card">
+                <div class="animal-image">
+                    <img src="{% if animal.imagem %}{{ animal.imagem.url }}{% else %}{% static 'img/placeholder.png' %}{% endif %}" alt="Imagem do Animal">
+                </div>
+                <div class="animal-info">
+                    <h3>{{ animal.nome }}</h3>
+                    <p><strong>Raça:</strong> {{ animal.raca }}</p>
+                    <p><strong>Data de Nascimento:</strong> {{ animal.data_nascimento }}</p>
+                    <p><strong>Sexo:</strong> {{ animal.get_sexo_display }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

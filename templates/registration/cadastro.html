@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adicione esta linha -->
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/login.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <style>
+        /* Adicione estilos adicionais aqui, se necessário */
+    </style>
+</head>
+<body class="login">
+    <div class="login">
+        <div class="login-container">
+            <h1>Cadastro</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="submit-row">
+                    <input type="submit" value="Cadastrar">
+                </div>
+            </form>
+            <br>
+            <p class="password-reset-link">Já tem uma conta? <a href="{% url 'login' %}">Faça login</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

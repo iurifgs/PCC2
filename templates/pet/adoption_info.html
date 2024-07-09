@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="adoption-header">
+        <img src="{% static 'img/ONGs.jpg' %}" alt="ONGs Image">
+        <div class="adoption-header-overlay">
+            <h1>Somos Cachorros</h1>
+        </div>
+    </div>
+    
+    <div class="adoption-main">
+        <div class="adoption-info">
+            <div class="info-text">
+                <h2>Agradecemos seu interesse em adotar um cão da Patas Solidárias.</h2>
+                <p>Do ponto de vista do animal, ser abandonado é doloroso...</p>
+                <p>Em caso de não adaptação, o animal deve ser devolvido para a Patas Solidárias.</p>
+            </div>
+        </div>
+        
+        <div class="location-info">
+            <div class="location-text">
+                <p>Nosso abrigo fica em Leopoldo de Bulhões, Goiás...</p>
+                <p>Estamos doando animais para Anápolis e cidades até 45 km do Centro.</p>
+                <p>Para outras localidades, consulte uma ONG ou o CCZ de sua cidade.</p>
+                <p>Dúvidas sobre o processo de adoção? Confira na página do animal ou entre em contato conosco.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="adoption-footer">
+        <img src="{% static 'img/iss.png' %}" alt="ISS Image">
+        <div class="footer-content">
+            <h2>Obrigado pela atenção</h2>
+        </div>
+    </div>
+{% endblock %}

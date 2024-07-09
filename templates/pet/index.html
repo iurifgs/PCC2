@@ -1,0 +1,42 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/style_projeto.css' %}">
+
+    <h1>Animais cadastrados</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Raça</th>
+                <th>Data de Nascimento</th>
+                <th>Imagem</th>
+                <th colspan="2">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for animal in animais %}
+                <tr>
+                    <td><a href="{% url 'Ler' animal.id %}">{{ animal.nome }}</a></td>
+                    <td>{{ animal.raca }}</td>
+                    <td>{{ animal.data_nascimento }}</td>
+                    <td>
+                        {% if animal.imagem %}
+                            <img src="{{ animal.imagem.url }}" alt="{{ animal.nome }}" style="max-width: 100px;">
+                        {% else %}
+                            Sem imagem
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a class="edit-link" href="{% url 'Atualizar' animal.id %}">Editar</a>
+                        <a class="delete-link" href="{% url 'Deletar' animal.id %}">Excluir</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="button-container">
+        <a class="button" href="{% url 'Criar' %}">Adicionar Animal</a>
+    </div>
+{% endblock %}

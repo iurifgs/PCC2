@@ -1,0 +1,36 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+    <form method="POST" id="delete-form">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th colspan="2">Confirmação de Exclusão</th>
+            </tr>
+            <tr>
+                <td>ID Nome:</td>
+                <td>{{ animal.id }} {{ animal.nome }}</td>
+            </tr>
+            <tr>
+                <td>Raça:</td>
+                <td>{{ animal.raca }}</td>
+            </tr>
+            <tr>
+                <td>Data de Nascimento:</td>
+                <td>{{ animal.data_nascimento }}</td>
+            </tr>
+            <tr>
+                <td>Imagem:</td>
+                <td>
+                    {% if animal.imagem %}
+                        <img src="{{ animal.imagem.url }}" alt="{{ animal.nome }}" style="max-width: 200px;">
+                    {% else %}
+                        Sem imagem disponível
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        <button type="submit" class="yes">Sim</button>
+        <a class="no" href="{% url 'admin_dashboard' %}">Não</a>
+    </form>
+{% endblock %}
